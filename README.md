@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website v2
 
-## Getting Started
+This repository contains the code for my portfolio website version 2.0. It is built using Next.js, React, and Tailwind CSS, with additional packages for email functionality and animation.
 
-First, run the development server:
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
+- [Dev Dependencies](#dev-dependencies)
+
+## Installation
+
+To get started with the project, clone this repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/protfolio-v2.git protfolio
+```
+
+Then, navigate to the project directory:
+
+```bash
+cd protfolio
+```
+
+Install the required dependencies:
+
+```bash
+npm install
+```
+
+## Usage
+
+Once the dependencies are installed, you can run the development server using:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server on `localhost:3000` by default. You can then view the website in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+For production build, you can use:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run build
+```
 
-## Learn More
+And to start the production server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project can be easily deployed using Vercel, which provides seamless integration with Next.js projects. Follow these steps to deploy:
 
-## Deploy on Vercel
+1. Install the Vercel CLI globally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install -g vercel
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Log in to your Vercel account:
+
+   ```bash
+   vercel login
+   ```
+
+3. Once logged in, navigate to your project directory:
+
+   ```bash
+   cd protfolio-v2
+   ```
+
+4. Deploy your project using the following command:
+
+   ```bash
+   vercel --prod
+   ```
+
+This will deploy your application to Vercel's platform and provide you with a unique URL where your application will be accessible.
+
+## Scripts
+
+- `dev`: Runs the Next.js development server.
+- `build`: Builds the production-ready version of the website.
+- `start`: Starts the production server.
+- `lint`: Lints the project files using ESLint.
+
+## Dependencies
+
+- `@emailjs/browser`: Provides functionality for sending emails from the browser.
+- `framer-motion`: Library for creating fluid animations in React.
+- `next`: Framework for building React applications.
+- `react`: JavaScript library for building user interfaces.
+- `react-dom`: Provides DOM-specific methods for React.
+- `react-icons`: Library for popular icons in React components.
+- `sharp`: High-performance image processing library.
+
+## Dev Dependencies
+
+- `autoprefixer`: PostCSS plugin to parse CSS and add vendor prefixes.
+- `eslint`: Tool for identifying and reporting on patterns found in JavaScript code.
+- `eslint-config-next`: ESLint configuration for Next.js projects.
+- `postcss`: Tool for transforming CSS with JavaScript plugins.
+- `tailwindcss`: Utility-first CSS framework for rapidly building custom designs.
