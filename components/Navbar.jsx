@@ -10,12 +10,11 @@ import github from '@public/github.png'
 import facebook from '@public/facebook.png'
 import instagram from '@public/instagram.png'
 import linkedin from '@public/linkedIn.png'
-import { list } from 'postcss';
 
 const Links = [
     { name: "Home", href: "/",},
     { name: "About", href: "/about",},
-    { name: "Protfolio", href: "/protfolio",},
+    { name: "Project", href: "/project",},
     { name: "Contact", href: "/contact",},
 ];
 
@@ -92,7 +91,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className='md:hidden lg:flex xl:w-1/3 flex xl:justify-center items-center'>
                 <Link href='/' className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center'>
-                    <span className='text-white mr-1'>Rahul A B{" "}</span>
+                    <span className='text-white mr-2'>Rahul A B{" "}</span>
                     <span className='w-12 h-8 rounded bg-white text-black flex items-center justify-center'>.dev</span>
                 </Link>
             </div>

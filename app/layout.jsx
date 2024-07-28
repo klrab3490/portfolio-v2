@@ -1,3 +1,4 @@
+import Navbar from "@components/Navbar";
 import "./globals.css";
 import PageTransition from "@components/PageTransition";
 

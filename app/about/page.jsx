@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useRef } from 'react';
 import Brain from '@components/Brain';
-import {  motion, useInView, useScroll } from 'framer-motion'
+import {  motion, useInView, useScroll, useTransform } from 'framer-motion'
 
 // Images
 import sign from "@public/Sign.png";
@@ -20,6 +20,8 @@ export default function About() {
     const experienceRef = useRef();
     const isExperienceInView = useInView(experienceRef,{ margin: "-100px" });
 
+    const scrollY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
     return (
         <motion.div className="h-full" initial={{y:"-200vh"}} animate={{y:"0%"}} transition={{ duration: 1 }}>
             {/* Container */}
@@ -32,7 +34,7 @@ export default function About() {
                         {/* Title */}
                         <h1 className='font-bold text-2xl'> BIOGRAPHY </h1>
                         {/* Description */}
-                        <p className='text-lg'> Rahul A B is a third-year undergraduate student at Sahrdaya College Of Engineering and Technology, Kerala, driven by a passion for frontend development and design. With a focus on becoming a full-stack web developer, Rahul immerses himself in projects ranging from Flutter app development to backend systems. He thrives on challenges, constantly seeking opportunities to enhance his skills and knowledge. Inspired by the ever-evolving landscape of technology, Rahul is committed to making a lasting impact in the field of web development, combining his creative flair with a dedication to innovation and excellence. </p>
+                        <p className='text-lg'>Rahul A B is a final-year undergraduate student at Sahrdaya College Of Engineering and Technology, Kerala, driven by a passion for front-end development and designer. With a focus on becoming a full-stack web developer, Rahul immerses himself in projects ranging from Flutter app development to backend systems or even Arduino development. He thrives on challenges, constantly seeking opportunities to enhance his skills and knowledge. Inspired by the ever-evolving landscape of technology, Rahul is committed to making a lasting impact in the field of web development, combining his creative flair with a dedication to innovation and excellence. Additionally, Rahul has experience with Arduino coding, further showcasing his versatility and technical prowess in various areas of development.</p>
                         {/* Quote */}
                         <span className='italic'> In the journey of life, obstacles are but stepping stones. Embrace the present, for it shapes your tomorrow. Strive forward with determination, for amidst the joys and sorrows, lies the essence of fulfillment. </span>
                         {/* Sign */}
@@ -48,25 +50,41 @@ export default function About() {
                     </div>
                     
                     {/* Skills */}
-                    <div className='flex flex-col sm:gap-12 gap-0 justify-center pb-48' ref={skillRef}>
+                    <div className='flex flex-col sm:gap-12 gap-0 justify-center pb-64' ref={skillRef}>
                         {/* Title */}
                         <motion.h1 initial={{ x: "-300px" }} animate={isSkillInView ? { x: 0 } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl"> Skills </motion.h1>
                         {/* Skills List */}
-                        <motion.div initial={{ x: "-300px" }} animate={isSkillInView ? { x: 0 } : {}} className="flex gap-4 flex-wrap" >
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">HTML</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">CSS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">JavaScript</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Tailwind CSS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">MySQL</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">MongoDB</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Firebase</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">React JS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Next JS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Express JS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Framer MOtion</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Python</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">C++</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Java</div>
+                        <motion.div initial={{ x: "-300px" }} animate={isSkillInView ? { x: 0 } : {}} className="flex flex-col" >
+                            <h1 className='font-semibold text-xl'>1. Front-End Technologies: </h1>
+                            <div className='flex flex-wrap gap-2 px-4 mt-1'>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">HTML</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">CSS</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">JavaScript</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Tailwind CSS</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">React JS</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Next JS</div>
+                            </div>
+                            <h1 className='font-semibold text-xl mt-2'>2. Back-End Technologies: </h1>
+                            <div className='flex flex-wrap gap-2 px-4 mt-1'>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">MySQL</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">MongoDB</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Firebase</div>
+                            </div>
+                            <h1 className='font-semibold text-xl mt-2'>3. Programming Languages: </h1>
+                            <div className='flex flex-wrap gap-2 px-4 mt-1'>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Python</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">C++</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Java</div>
+                            </div>
+                            <h1 className='font-semibold text-xl mt-2'>4. UI/UX Design: </h1>
+                            <div className='flex flex-wrap gap-2 px-4 mt-1'>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Figma</div>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Canva</div>
+                            </div>
+                            <h1 className='font-semibold text-xl mt-2'>5. Tools: </h1>
+                            <div className='flex flex-wrap gap-2 px-4 mt-1'>
+                                <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Git</div>
+                            </div>
                         </motion.div>
                         {/* Scroll SVG */}
                         <motion.svg initial={{ opacity: 0.2, y: 0 }} animate={{ opacity: 1, y: "10px" }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width={50} height={50} >

@@ -40,12 +40,12 @@ export default function Contact() {
                     </div>
                 </div>
                 {/* Form */}
-                <form ref={form} onSubmit={sendEmail} className='h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col sm:gap-8 gap-1 justify-center p-6 lg:p-16'>
-                    <span>Dear Rahul A B,</span>
-                    <textarea rows={6} name='user_message' placeholder='Enter Message' className='bg-transparent border-b-2 border-b-black outline-none resize-none'/>
-                    <span>My Mail Address Is:</span>
-                    <input type='email' name='user_email' placeholder='Enter Email Address' className=' bg-transparent border-b-2 border-b-black outline-none'/>
-                    <span>Regards</span>
+                <form ref={form} onSubmit={sendEmail} className='h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col sm:gap-8 gap-4 justify-center p-6 lg:p-16'>
+                    <span className='text-lg sm:text-xl'>Dear Rahul A B,</span>
+                    <textarea rows={6} name='user_message' placeholder='Enter Message' className='bg-transparent border-b-2 border-b-black outline-none resize-none p-2'/>
+                    <span className='text-lg sm:text-xl'>My Mail Address Is:</span>
+                    <input type='email' name='user_email' placeholder='Enter Email Address' className=' bg-transparent border-b-2 border-b-black outline-none p-2'/>
+                    <span className='text-lg sm:text-xl'>Regards</span>
                     <button className='bg-purple-200 rounded font-semibold text-gray-600 p-4'>Send</button>
                     {success && <span className='text-green-600 font-semibold text-center'>Your Message Has Been Sent Successfully!</span>}
                     {error && <span className='text-red-600 font-semibold text-center'>Something Went Wrong!!</span>}
